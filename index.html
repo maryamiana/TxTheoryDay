@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Texas Area Theory and Algorithms Day &mdash; Rice University, Sep 19, 2026</title>
+    <meta name="description" content="Texas Area Theory and Algorithms Day — a one-day workshop at Rice University on September 19, 2026." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css"/>
+    <link rel="stylesheet" href="assets/css/tiny-slider.css"/>
+    <link rel="stylesheet" href="assets/css/glightbox.min.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/lindy-uikit.css"/>
+
+    <!-- ========================= workshop-specific tweaks ========================= -->
+    <style>
+      :root { --workshop-accent: #1a56a8; }
+
+      /* Text brand instead of the template logo image */
+      .navbar-brand.text-brand { font-size: 20px; font-weight: 700; color: #212b36; line-height: 1.2; }
+      .navbar-brand.text-brand span { display: block; font-size: 11px; font-weight: 500; letter-spacing: .5px; color: #637381; text-transform: uppercase; }
+
+      /* Hero */
+      /* The template defaults to 300px top/bottom padding; tighten it so the
+         title and facts card sit closer to the top of the page. */
+      .hero-section-wrapper-2 .hero-style-2 .hero-content-wrapper { padding: 200px 0 120px; }
+      @media (max-width: 991px) {
+        .hero-section-wrapper-2 .hero-style-2 .hero-content-wrapper { padding: 160px 0 60px; }
+      }
+      .hero-section .hero-content-wrapper h4 { color: var(--workshop-accent); letter-spacing: 1px; text-transform: uppercase; }
+      .hero-meta { list-style: none; padding: 0; margin: 0 0 40px; }
+      .hero-meta li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; font-size: 17px; color: #212b36; }
+      .hero-meta li i { color: var(--workshop-accent); font-size: 22px; line-height: 1.5; }
+      .hero-meta li span small { display: block; color: #637381; font-size: 14px; font-weight: 400; }
+
+      /* Quick-facts card in the hero */
+      .facts-card { background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.08); padding: 40px 36px; }
+      .facts-card h5 { margin-bottom: 22px; }
+      .facts-card .fact { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #eef0f3; }
+      .facts-card .fact:first-of-type { border-top: 0; }
+      .facts-card .fact i { color: var(--workshop-accent); font-size: 24px; margin-top: 2px; }
+      .facts-card .fact strong { display: block; color: #212b36; }
+      .facts-card .fact span { color: #637381; font-size: 15px; }
+
+      /* Organizer cards */
+      .organizer-card { text-align: center; background: #fff; border-radius: 14px; padding: 40px 24px; box-shadow: 0 10px 40px rgba(0,0,0,.06); height: 100%; transition: transform .3s; }
+      .organizer-card:hover { transform: translateY(-6px); }
+      .organizer-card .photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center top; margin: 0 auto 22px; display: block; box-shadow: 0 8px 24px rgba(0,0,0,.14); }
+      .organizer-card h5 a { color: inherit; }
+      .organizer-card h5 a:hover { color: var(--workshop-accent); }
+      .organizer-card h5 { margin-bottom: 6px; }
+      .organizer-card p { color: #637381; margin: 0; }
+
+      /* Venue / map */
+      .venue-map iframe { width: 100%; height: 380px; border: 0; border-radius: 14px; }
+      .venue-list { list-style: none; padding: 0; margin: 0; }
+      .venue-list li { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 26px; }
+      .venue-list li i { color: var(--workshop-accent); font-size: 24px; margin-top: 3px; }
+      .venue-list li h6 { margin-bottom: 6px; }
+      .venue-list li p { margin: 0; color: #637381; }
+      .parking-box { background: #f4f7fb; border-radius: 14px; padding: 30px 32px; margin-top: 30px; }
+      .parking-box h6 { color: var(--workshop-accent); }
+
+      .cta-band { background: var(--workshop-accent); border-radius: 20px; padding: 60px; text-align: center; color: #fff; }
+      .cta-band h3 { color: #fff; margin-bottom: 16px; }
+      .cta-band p { color: rgba(255,255,255,.85); margin-bottom: 32px; }
+      .cta-band .button { background: #fff; color: var(--workshop-accent); }
+
+      .section-pad { padding: 90px 0; }
+      .badge-soon { display: inline-block; background: #f4f7fb; color: #637381; border-radius: 30px; padding: 6px 18px; font-size: 14px; }
+
+      /* Speakers */
+      .speaker-group-title { text-align: center; margin: 60px 0 40px; }
+      .speaker-group-title:first-of-type { margin-top: 0; }
+      .speaker-group-title h4 { display: inline-block; position: relative; padding: 0 24px; color: #212b36; }
+      .speaker-group-title h4::after { content: ""; display: block; width: 56px; height: 3px; background: var(--workshop-accent); border-radius: 3px; margin: 12px auto 0; }
+      .speaker-tba { text-align: center; color: #637381; }
+
+      /* Sponsors */
+      .sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+      .sponsor-item { display: flex; align-items: center; gap: 18px; background: #fff; border-radius: 14px; padding: 26px 34px; box-shadow: 0 10px 40px rgba(0,0,0,.06); transition: transform .3s; width: 440px; max-width: 100%; }
+      .sponsor-item:hover { transform: translateY(-4px); }
+      .sponsor-item img { height: 56px; width: auto; }
+      .sponsor-item .name { text-align: left; }
+      .sponsor-item .name strong { display: block; color: #212b36; font-size: 17px; }
+      .sponsor-item .name span { color: #637381; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2">
+
+      <!-- ========================= header-2 start ========================= -->
+      <header class="header header-2">
+        <div class="navbar-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                  <a class="navbar-brand text-brand" href="index.html">
+                    TX Theory Day
+                    <span>Rice University &middot; Sep 19, 2026</span>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                    <ul id="nav2" class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="page-scroll active" href="#home">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="program.html">Program</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#speakers">Speakers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#venue">Venue</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#organizers">Organizers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#sponsors">Sponsors</a>
+                      </li>
+                    </ul>
+                    <a href="https://forms.gle/mPVHabNUUEeB28XbA" target="_blank" rel="noopener" class="button button-sm radius-10 d-none d-lg-flex">Register</a>
+                  </div>
+                  <!-- navbar collapse -->
+                </nav>
+                <!-- navbar -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- navbar area -->
+      </header>
+      <!-- ========================= header-2 end ========================= -->
+
+      <!-- ========================= hero-2 start ========================= -->
+      <div class="hero-section hero-style-2">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="hero-content-wrapper">
+                <h4 class="wow fadeInUp" data-wow-delay=".2s">One-Day Workshop</h4>
+                <h2 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Texas Area Theory and Algorithms Day</h2>
+                <p class="mb-40 wow fadeInUp" data-wow-delay=".6s">A gathering of the theory and algorithms community across Texas and beyond.</p>
+                <ul class="hero-meta wow fadeInUp" data-wow-delay=".7s">
+                  <li><i class="lni lni-calendar"></i> <span><strong>Saturday, September 19, 2026</strong></span></li>
+                  <li><i class="lni lni-map-marker"></i> <span><strong>Rice University, Houston, TX</strong></span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="facts-card wow fadeInRight" data-wow-delay=".3s">
+                <h5>Workshop Details</h5>
+                <div class="fact">
+                  <i class="lni lni-bulb"></i>
+                  <div><strong>About</strong><span>A one-day workshop fostering collaboration and engagement among researchers in theoretical computer science and algorithms across Texas and the surrounding regions.</span></div>
+                </div>
+                <div class="fact">
+                  <i class="lni lni-ticket"></i>
+                  <div><strong>Registration</strong><span>Free &middot; <a href="https://forms.gle/mPVHabNUUEeB28XbA" target="_blank" rel="noopener">register here</a> &middot; deadline Sep 10, 2026</span></div>
+                </div>
+                <div class="fact">
+                  <i class="lni lni-agenda"></i>
+                  <div><strong>Program</strong><span>See the <a class="page-scroll" href="#speakers">confirmed speakers</a> below &mdash; the full <a href="program.html">schedule</a> is coming soon</span></div>
+                </div>
+                <div class="fact">
+                  <i class="lni lni-blackboard"></i>
+                  <div><strong>Poster Session &amp; Graduating Bits</strong><span>The workshop includes a poster session and a Graduating Bits session &mdash; indicate your interest to present on the <a href="https://forms.gle/mPVHabNUUEeB28XbA" target="_blank" rel="noopener">registration form</a></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========================= hero-2 end ========================= -->
+
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+
+    <!-- ========================= speakers start ========================= -->
+    <section id="speakers" class="section-pad">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-6 col-lg-8">
+            <div class="section-title text-center mb-60">
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Confirmed Speakers</h3>
+              <p class="wow fadeInUp" data-wow-delay=".4s">More speakers will be announced soon.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="speaker-group-title wow fadeInUp" data-wow-delay=".2s">
+          <h4>Featured Speakers</h4>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".2s">
+              <img class="photo" src="assets/img/speakers/piotr-indyk.jpg" alt="Piotr Indyk">
+              <h5><a href="https://people.csail.mit.edu/indyk/" target="_blank" rel="noopener">Piotr Indyk</a></h5>
+              <p>MIT</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".4s">
+              <img class="photo" src="assets/img/speakers/john-wright.jpg" alt="John Wright">
+              <h5><a href="https://people.eecs.berkeley.edu/~jswright/" target="_blank" rel="noopener">John Wright</a></h5>
+              <p>UC Berkeley</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".6s">
+              <img class="photo" src="assets/img/speakers/mingda-qiao.jpg" alt="Mingda Qiao">
+              <h5><a href="https://sites.google.com/site/acmonsterqiao/" target="_blank" rel="noopener">Mingda Qiao</a></h5>
+              <p>UMass Amherst</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="speaker-group-title wow fadeInUp" data-wow-delay=".2s">
+          <h4>Texas Area Speakers</h4>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-xl-3 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".2s">
+              <img class="photo" src="assets/img/speakers/alireza-fallah.jpg" alt="Alireza Fallah">
+              <h5><a href="https://afallah.com/" target="_blank" rel="noopener">Alireza Fallah</a></h5>
+              <p>Rice University</p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".3s">
+              <img class="photo" src="assets/img/speakers/noah-golowich.jpg" alt="Noah Golowich">
+              <h5><a href="https://noahgol.github.io/" target="_blank" rel="noopener">Noah Golowich</a></h5>
+              <p>UT Austin</p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".4s">
+              <img class="photo" src="assets/img/speakers/moshe-vardi.jpg" alt="Moshe Vardi">
+              <h5><a href="https://www.cs.rice.edu/~vardi/" target="_blank" rel="noopener">Moshe Vardi</a></h5>
+              <p>Rice University</p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".5s">
+              <img class="photo" src="assets/img/speakers/david-wu.jpg" alt="David Wu">
+              <h5><a href="https://www.cs.utexas.edu/~dwu4/" target="_blank" rel="noopener">David Wu</a></h5>
+              <p>UT Austin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= speakers end ========================= -->
+
+    <!-- ========================= venue start ========================= -->
+    <section id="venue" class="section-pad" style="background:#f8fafc;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-6 col-xl-7 col-lg-9">
+            <div class="section-title text-center mb-60">
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Venue &amp; Getting There</h3>
+              <p class="wow fadeInUp" data-wow-delay=".4s">The workshop takes place on the fifth floor of the Ralph S. O'Connor Building for Engineering and Science at Rice University.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="venue-map wow fadeInLeft" data-wow-delay=".2s">
+              <iframe
+                title="Map to Ralph S. O'Connor Building for Engineering and Science, Rice University"
+                src="https://www.google.com/maps?q=Ralph%20S.%20O%27Connor%20Building%20for%20Engineering%20and%20Science%2C%20Rice%20University%2C%20Houston%2C%20TX&z=16&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <p class="mt-2 text-center"><a href="https://www.google.com/maps/search/?api=1&query=Ralph+S.+O%27Connor+Building+for+Engineering+and+Science+Rice+University" target="_blank" rel="noopener">Open in Google Maps &rarr;</a></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="venue-list wow fadeInRight" data-wow-delay=".2s">
+              <li>
+                <i class="lni lni-apartment"></i>
+                <div>
+                  <h6>Location</h6>
+                  <p>5th floor, Ralph S. O'Connor Building for Engineering and Science, Rice University, 6100 Main St, Houston, TX 77005.</p>
+                </div>
+              </li>
+              <li>
+                <i class="lni lni-map-marker"></i>
+                <div>
+                  <h6>On campus</h6>
+                  <p>The O'Connor building sits on the engineering quad. Once inside, take the elevators to the 5th floor.</p>
+                </div>
+              </li>
+              <li>
+                <i class="lni lni-car"></i>
+                <div>
+                  <h6>Visitor parking</h6>
+                  <p>Since the workshop is on a <strong>Saturday</strong>, most visitor lots are open and available. Look for an open lot near the O'Connor building &mdash; for example the <strong>North Lot</strong> or the <strong>Cambridge Garage</strong>, among others. Use Rice's <a href="https://map.concept3d.com/?id=473#!ce/13220?s/" target="_blank" rel="noopener">interactive visitor parking map</a> to find available parking.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= venue end ========================= -->
+
+    <!-- ========================= organizers start ========================= -->
+    <section id="organizers" class="section-pad">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-6 col-lg-8">
+            <div class="section-title text-center mb-60">
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Organizers</h3>
+              <p class="wow fadeInUp" data-wow-delay=".4s">The workshop is organized by:</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center g-4">
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".2s">
+              <div class="photo" style="overflow:hidden;">
+                <img src="assets/img/organizers/maryam-aliakbarpour.jpg" alt="Maryam Aliakbarpour" style="width:100%;height:100%;object-fit:cover;object-position:center 28%;transform:scale(1.8) translate(-16%,-20%);transform-origin:center 28%;">
+              </div>
+              <h5><a href="https://maryamaliakbarpour.com/" target="_blank" rel="noopener">Maryam Aliakbarpour</a></h5>
+              <p>Rice University</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".4s">
+              <img class="photo" src="assets/img/organizers/kevin-tian.jpg" alt="Kevin Tian">
+              <h5><a href="https://kjtian.github.io/" target="_blank" rel="noopener">Kevin Tian</a></h5>
+              <p>UT Austin</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 col-sm-10">
+            <div class="organizer-card wow fadeInUp" data-wow-delay=".6s">
+              <img class="photo" src="assets/img/organizers/samson-zhou.jpg" alt="Samson Zhou">
+              <h5><a href="https://engineering.tamu.edu/cse/profiles/zhou-samson.html" target="_blank" rel="noopener">Samson Zhou</a></h5>
+              <p>Texas A&amp;M University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= organizers end ========================= -->
+
+    <!-- ========================= sponsors start ========================= -->
+    <section id="sponsors" class="section-pad" style="background:#f8fafc; padding-top:70px; padding-bottom:70px;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-40">
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Sponsors</h3>
+            </div>
+          </div>
+        </div>
+        <div class="sponsor-row wow fadeInUp" data-wow-delay=".3s">
+          <a href="https://csweb.rice.edu/" target="_blank" rel="noopener" class="sponsor-item">
+            <img src="assets/img/sponsors/rice-shield.png" alt="Rice University shield">
+            <span class="name"><strong>Department of Computer Science</strong><span>Rice University</span></span>
+          </a>
+          <a href="https://www.sigact.org/" target="_blank" rel="noopener" class="sponsor-item">
+            <img src="assets/img/sponsors/sigact.svg" alt="ACM SIGACT logo">
+            <span class="name"><strong>ACM SIGACT</strong><span>Special Interest Group on Algorithms &amp; Computation Theory</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= sponsors end ========================= -->
+
+    <!-- ========================= footer style-1 start ========================= -->
+    <footer class="footer footer-style-1" style="padding-top:0;">
+      <div class="container">
+        <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s" style="border-top:0;">
+          <p>&copy; 2026 Texas Area Theory and Algorithms Day &middot; Rice University</p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
