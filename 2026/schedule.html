@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Schedule &mdash; Texas Area Theory and Algorithms Day</title>
+    <meta name="description" content="Schedule for the Texas Area Theory and Algorithms Day at Rice University on September 19, 2026 — invited talks with titles and abstracts, poster session, and student talks." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css"/>
+    <link rel="stylesheet" href="assets/css/tiny-slider.css"/>
+    <link rel="stylesheet" href="assets/css/glightbox.min.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/lindy-uikit.css"/>
+
+    <!-- ========================= workshop-specific tweaks ========================= -->
+    <style>
+      :root { --workshop-accent: #1a56a8; }
+
+      /* Text brand instead of the template logo image */
+      .navbar-brand.text-brand { font-size: 20px; font-weight: 700; color: #212b36; line-height: 1.2; }
+      .navbar-brand.text-brand span { display: block; font-size: 11px; font-weight: 500; letter-spacing: .5px; color: #637381; text-transform: uppercase; }
+
+      .section-pad { padding: 90px 0; }
+
+      /* Push the schedule below the fixed header */
+      .schedule-section { padding-top: 160px; }
+      @media (max-width: 991px) {
+        .schedule-section { padding-top: 120px; }
+      }
+
+      .schedule-intro { text-align: center; color: #637381; max-width: 720px; margin: 0 auto 50px; font-size: 17px; line-height: 30px; }
+      .schedule-intro strong { color: #212b36; }
+
+      /* Schedule table */
+      .schedule-table-wrap { overflow-x: auto; background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.08); }
+      .schedule-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+      /* Narrow header bar in the hero-banner blue (#2f80ed) used on the home page */
+      .schedule-table th {
+        text-align: left; padding: 11px 26px; background: #5f97e3; color: #fff;
+        font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      }
+      .schedule-table td { padding: 20px 26px; border-top: 1px solid #eef0f3; vertical-align: top; color: #212b36; }
+      .schedule-table tr:first-child td { border-top: 0; }
+      .schedule-table .col-time { width: 22%; }
+      .schedule-time { white-space: nowrap; font-weight: 600; color: var(--workshop-accent); font-size: 15px; }
+      .schedule-break td { background: #f8fafc; color: #637381; }
+      .event-title { font-weight: 600; }
+
+      /* Talk cells */
+      .talk-speaker { display: block; font-weight: 700; font-size: 17px; color: #212b36; }
+      .talk-speaker a { color: inherit; }
+      .talk-speaker a:hover { color: var(--workshop-accent); }
+      .talk-affiliation { font-weight: 400; color: #637381; font-size: 15px; }
+      .talk-title { display: block; margin-top: 5px; color: #637381; font-size: 15px; line-height: 24px; }
+
+      /* Expandable abstracts */
+      details.talk-abstract { margin-top: 12px; }
+      details.talk-abstract > summary {
+        display: inline-flex; align-items: center; gap: 7px; cursor: pointer; list-style: none;
+        width: max-content; padding: 5px 14px; border: 1px solid #d7dfe9; border-radius: 999px;
+        background: #f4f7fb; color: var(--workshop-accent); font-size: 12px; font-weight: 600;
+        letter-spacing: .05em; text-transform: uppercase;
+        transition: background .2s ease, border-color .2s ease;
+      }
+      details.talk-abstract > summary::-webkit-details-marker { display: none; }
+      details.talk-abstract > summary:hover { background: #e8eef7; border-color: var(--workshop-accent); }
+      details.talk-abstract > summary .chevron { width: 12px; height: 12px; transition: transform .2s ease; }
+      details.talk-abstract[open] > summary .chevron { transform: rotate(180deg); }
+      details.talk-abstract[open] > summary .label-show { display: none; }
+      .talk-abstract .label-hide { display: none; }
+      details.talk-abstract[open] > summary .label-hide { display: inline; }
+      .talk-abstract-body { margin-top: 14px; max-width: 680px; }
+      .talk-abstract-body p, .talk-abstract-body li { font-size: 15px; line-height: 26px; color: #212b36; }
+      .talk-abstract-body p { margin-bottom: 12px; }
+      .talk-abstract-body ul { margin: 0 0 12px; padding-left: 20px; }
+      .talk-abstract-body li { margin-bottom: 6px; }
+      .talk-abstract-body p:last-child, .talk-abstract-body ul:last-child { margin-bottom: 0; }
+
+      @media (max-width: 575px) {
+        .schedule-table .col-time { width: auto; }
+        .schedule-table th, .schedule-table td { padding: 14px 16px; }
+        .schedule-table th { padding: 10px 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+
+    <!-- ========================= header start ========================= -->
+    <section class="hero-section-wrapper-2">
+      <header class="header header-2">
+        <div class="navbar-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                  <a class="navbar-brand text-brand" href="index.html">
+                    TX Theory Day
+                    <span>Rice University &middot; Sep 19, 2026</span>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                    <ul id="nav2" class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="index.html#speakers">Speakers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="active" href="schedule.html">Schedule</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="index.html#venue">Venue</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="index.html#organizers">Organizers</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="index.html#sponsors">Sponsors</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- navbar collapse -->
+                </nav>
+                <!-- navbar -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- navbar area -->
+      </header>
+    </section>
+    <!-- ========================= header end ========================= -->
+
+    <!-- ========================= schedule start ========================= -->
+    <section id="schedule" class="section-pad schedule-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-6 col-xl-7 col-lg-9">
+            <div class="section-title text-center mb-30">
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Schedule</h3>
+            </div>
+          </div>
+        </div>
+        <p class="schedule-intro wow fadeInUp" data-wow-delay=".3s">
+          5th floor, Ralph S. O'Connor Building for Engineering and Science, Rice University.<br>
+          All times are Central Time (CDT).
+        </p>
+
+        <div class="schedule-table-wrap wow fadeInUp" data-wow-delay=".4s">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th class="col-time" scope="col">Time</th>
+                <th scope="col">Session</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="schedule-break">
+                <td class="schedule-time">8:30 – 9:00 AM</td>
+                <td>Check-in &amp; coffee</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">9:00 – 9:05 AM</td>
+                <td class="event-title">Opening remarks</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">9:05 – 9:45 AM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://people.csail.mit.edu/indyk/" target="_blank" rel="noopener">Piotr Indyk</a> <span class="talk-affiliation">(MIT)</span></span>
+                  <span class="talk-title">Graph-Based Algorithms for Similarity Search: Challenges, Opportunities and Connections</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>Over the last few years, graph-based approaches to nearest neighbor search have attracted renewed interest. Algorithms such as HNSW, NSG, and DiskANN have become popular tools in practice. These algorithms are highly versatile and come with efficient implementations. At the same time, their correctness, performance guarantees, and functionality are not fully understood. In this talk, I will discuss the challenges and opportunities presented by this class of algorithms, as well as some connections to older methods.</p>
+                      <p>The talk will be based on the following papers:</p>
+                      <ul>
+                        <li>Indyk, Piotr, and Haike Xu. &ldquo;Worst-case performance of popular approximate nearest neighbor search implementations: Guarantees and limitations.&rdquo; Advances in Neural Information Processing Systems, 2023.</li>
+                        <li>Xu, Haike, Sandeep Silwal, and Piotr Indyk. &ldquo;A bi-metric framework for fast similarity search.&rdquo; International Conference on Machine Learning, 2026.</li>
+                        <li>Feng, Ying, Piotr Indyk, Michael Kapralov, Dmitry Krachun, and Boris Prokhorov. &ldquo;Provable quantization with randomized Hadamard transform.&rdquo; arXiv preprint arXiv:2605.13810, 2026.</li>
+                      </ul>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr>
+                <td class="schedule-time">9:45 – 10:15 AM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://people.engr.tamu.edu/j-chen3/index.html" target="_blank" rel="noopener">Jianer Chen</a> <span class="talk-affiliation">(Texas A&amp;M University)</span></span>
+                  <span class="talk-title">Quasi-Linear Time Algorithms with Limited Space</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>Motivated by research in big data computing, we study (parameterized) algorithms that run in linear or quasi-linear time with limited space complexity. By a multivariate nature, this model offers mechanisms for formal analysis of both efficiency and effectiveness of big data computing, measuring the complexity of accessing input data of very large size n and analyzing the additional computational costs (time and space) that are bounded by polynomials of the parameter k and needed in the limited local computing resources. We develop such algorithms for well-known computational problems, such as the (polynomial-time solvable) Maximum Weighted Matching problem and the (NP-hard) Line-Cover problem.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr class="schedule-break">
+                <td class="schedule-time">10:15 – 10:40 AM</td>
+                <td>Coffee break</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">10:40 – 11:20 AM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://sites.google.com/site/acmonsterqiao/" target="_blank" rel="noopener">Mingda Qiao</a> <span class="talk-affiliation">(UMass Amherst)</span></span>
+                  <span class="talk-title">Measuring Miscalibration: Incentives, Algorithms, and Statistical Limits</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>A probabilistic forecaster is calibrated if it is unbiased conditioned on each predicted value, e.g., among the events to which it assigns probability 70%, roughly 70% actually occur. Calibration is a classical criterion for evaluating probabilistic predictions, but a basic question remains surprisingly unsettled: how should we quantify the amount of miscalibration?</p>
+                      <p>In the first part of the talk, I will approach this question from an incentive perspective. Ideally, a calibration measure should encourage a forecaster to report its true beliefs. However, many existing measures fail this property: a forecaster can sometimes obtain a much smaller calibration error by deliberately misreporting. We then introduce new calibration measures that are approximately truthful.</p>
+                      <p>In the second part, I will focus on the distance from calibration: the minimum distance between a predictor and a perfectly calibrated one. This measure has several appealing conceptual properties, but raises basic algorithmic and statistical questions: How efficiently can it be computed? How many samples are needed to estimate it? I will describe algorithms and hardness results that give an almost complete picture of these questions.</p>
+                      <p>This talk is based on joint work with Nika Haghtalab, Kunhe Yang, Eric Zhao, and Letian Zheng.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr>
+                <td class="schedule-time">11:20 – 11:50 AM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://noahgol.github.io/" target="_blank" rel="noopener">Noah Golowich</a> <span class="talk-affiliation">(UT Austin)</span></span>
+                  <span class="talk-title">The Power of Test-Time Training for Approximate Sampling</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>Efficiently sampling from a complex probability distribution is a fundamental problem which has become increasingly pertinent in recent years with the rise of generative AI, as sophisticated sampling procedures from LLMs have been proposed to solve challenging reasoning problems. The efficacy of such sampling algorithms is limited, however, by the relationship between the LLM and the particular sampling task at hand, which has motivated the framework of test-time training (TTT). TTT works by updating a model's weights in response to partial generations and reward feedback received at inference time, thus adapting to the particular problem. In this work, we propose a formalization for TTT as the problem of producing a sample from a given probability measure μ⋆ belonging to a known class F of distributions, given an oracle μ̂ which yields approximate density estimates for μ⋆. This is closely related to the problem of reducing sampling to approximate counting studied in seminal works of Jerrum, Valiant and Vazirani (1986) and Sinclair and Jerrum (1989): namely, when F is the class of all distributions, it coincides exactly with the aforementioned counting-to-sampling reduction.</p>
+                      <p>In this paper, we first show a quadratic lower bound on the query complexity of sampling from μ⋆ given query access to μ̂ (for sufficiently large classes F), thus showing that the random walk approach proposed by Sinclair and Jerrum (1989) and refined by Hayes and Sinclair (2010) is optimal. This answers an open question posed by Hayes and Sinclair. We then show that this lower bound can be circumvented if the size of F is bounded appropriately. As we discuss, this latter result can be viewed as an abstraction of TTT, and thus represents a starting point for the development of a principled theoretical framework for TTT. Joint work with Ankur Moitra and Dhruv Rohatgi.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr>
+                <td class="schedule-time">11:50 AM – 12:20 PM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://afallah.com/" target="_blank" rel="noopener">Alireza Fallah</a> <span class="talk-affiliation">(Rice University)</span></span>
+                  <span class="talk-title">Beyond Binary Feedback: Response Times for AI Alignment</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>Human feedback is often reduced to binary choices: one option is preferred to another, one answer is ranked above another, or one policy is selected over a competing alternative. This talk argues that such choice-only data can discard economically and statistically important information. Building on a general framework for estimating preferences from both choices and response times, I will show how response-time data can sharpen preference estimation, deliver fast convergence rates under drift-diffusion models, and improve the estimation of economically meaningful parameters in applications such as intertemporal choice. I will then connect this methodology to a central problem in AI alignment: learning a representative reward model from heterogeneous, often anonymous human labelers. In this setting, pooled binary feedback can make population-average preferences unidentifiable, leading to systematic distortions in the learned policy. I will show that response times provide a simple, low-cost additional signal that can restore identifiability and enable consistent estimation of average preferences, even when each labeler contributes only a single comparison.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr class="schedule-break">
+                <td class="schedule-time">12:20 – 12:45 PM</td>
+                <td>Lunch &amp; poster setup</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">12:45 – 2:00 PM</td>
+                <td class="event-title">Poster session (lunch continues)</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">2:00 – 3:00 PM</td>
+                <td class="event-title">Student talks</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">3:00 – 3:40 PM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://www.cs.rice.edu/~vardi/" target="_blank" rel="noopener">Moshe Vardi</a> <span class="talk-affiliation">(Rice University)</span></span>
+                  <span class="talk-title">Logical Algorithmics: From Theory to Practice</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>The standard approach to algorithm development is to focus on a specific problem and develop for it a specific algorithm. Codd's introduction of the relational model in 1970 included two fundamental ideas: (1) Relations provide a universal data representation formalism, and (2) Relational databases can be queried using first-order logic. Realizing these ideas required the development of a meta-algorithm, which takes a declarative query and executes it with respect to a database. In this talk, I will describe this approach, which I call Logical Algorithmics, in detail, and explore its profound ramification.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr>
+                <td class="schedule-time">3:40 – 4:10 PM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://personal.utdallas.edu/~daescu/" target="_blank" rel="noopener">Ovidiu Daescu</a> <span class="talk-affiliation">(UT Dallas)</span></span>
+                  <span class="talk-title">Some optimization and robotics path planning problems I would like to see resolved</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>Planning with geometric constraints has long been studied and sits at the intersection of multiple fields. It gives rise to interesting optimization problems. I will address two specific problems, one on finding a valid trajectory for a robotic arm subject to obstacle clearance and one on querying geometric objects (points, line segments) with various objective functions.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr class="schedule-break">
+                <td class="schedule-time">4:10 – 4:35 PM</td>
+                <td>Coffee break</td>
+              </tr>
+              <tr>
+                <td class="schedule-time">4:35 – 5:15 PM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://people.eecs.berkeley.edu/~jswright/" target="_blank" rel="noopener">John Wright</a> <span class="talk-affiliation">(UC Berkeley)</span></span>
+                  <span class="talk-title">New advances in quantum learning theory</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>The area of quantum learning theory focuses on learning quantum objects such as states or unitaries with as few resources as possible. Up until recently, for many of these problems, we either did not have optimal algorithms, or we did have optimal algorithms, but these algorithms were difficult to describe and even more difficult to analyze. This has changed over the last year, however, due to a new, unifying tool known as the random purification channel, which has led to optimal algorithms for many problems in quantum learning theory which are conceptually clean and easy to analyze. In this talk, I will introduce the random purification channel and show several applications of it. No prior background in quantum computing will be assumed.</p>
+                      <p>This is based on joint works with Angelos Pelecanos, Jack Spilecki, Ewin Tang, and Mark Zhandry.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+              <tr>
+                <td class="schedule-time">5:15 – 5:45 PM</td>
+                <td>
+                  <span class="talk-speaker"><a href="https://www.cs.utexas.edu/~dwu4/" target="_blank" rel="noopener">David Wu</a> <span class="talk-affiliation">(UT Austin)</span></span>
+                  <span class="talk-title">Succinct Matrix Commitments and their Applications</span>
+                  <details class="talk-abstract">
+                    <summary>
+                      <span class="label-show">Abstract</span><span class="label-hide">Hide abstract</span>
+                      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                    </summary>
+                    <div class="talk-abstract-body">
+                      <p>In this talk, I will survey some recent results in realizing advanced cryptographic notions from lattices. I will focus on a new object called a succinct matrix commitment and then show how it enables applications to broadcast encryption, succinct arguments, and more.</p>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= schedule end ========================= -->
+
+    <!-- ========================= footer style-1 start ========================= -->
+    <footer class="footer footer-style-1" style="padding-top:0;">
+      <div class="container">
+        <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s" style="border-top:0;">
+          <p>&copy; 2026 Texas Area Theory and Algorithms Day &middot; Rice University</p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
